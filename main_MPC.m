@@ -146,9 +146,7 @@ for i = 1 : N
     end
 
     Y_sp(i,:) = [MPC.Vsp, MPC.Xsp, MPC.Ssp];
-    if mod(i, 2) ==0
     uk = MPC.solve(x0_estimate(:)', uk(:)');
-    end
 
     U(i, :) = uk;
 
@@ -226,3 +224,4 @@ function x = measure(x)
         end
     end
 end
+
